@@ -40,9 +40,97 @@ send me a DM to check your pull request
 
  Wait for my code review.
  */
-
 #include <iostream>
+
+struct FloatType
+{
+    float add( float lhs, float rhs)
+    {
+        return lhs + rhs;
+    }
+    float subtract( float lhs, float rhs )
+    {
+        return lhs - rhs;
+    }
+     float multiply( float lhs, float rhs )
+    {
+        return lhs * rhs;
+    }
+    float divide( float lhs, float rhs )
+    {
+        if ( rhs == 0.0f )
+        {
+            std::cout << "Warning: Divisor is 0!" << std::endl;
+            return lhs / rhs;; 
+        }
+        else return lhs / rhs;
+    }
+};
+
+struct DoubleType
+{
+    double add( double lhs, double rhs )
+    {
+        return lhs + rhs;
+    }
+    double subtract( double lhs, double rhs )
+    {
+        return lhs - rhs;
+    }
+     double multiply( double lhs, double rhs )
+    {
+        return lhs * rhs;
+    }
+    double divide( double lhs, double rhs )
+    {
+        if ( rhs == 0.0 )
+        {
+            std::cout << "Warning: Divisor is 0!" << std::endl;
+            return lhs / rhs;; 
+        }
+        else return lhs / rhs;
+    }
+
+};
+
+struct IntType
+{
+ int add( int lhs, int rhs )
+    {
+        return lhs + rhs;
+    }
+    int subtract( int lhs, int rhs )
+    {
+        return lhs - rhs;
+    }
+     int multiply( int lhs, int rhs )
+    {
+        return lhs * rhs;
+    }
+    int divide( int lhs, int rhs )
+    {
+        if ( rhs == 0 )
+        {
+            std::cout << "Warning: Divisor is 0! Operation Canceled. Default answer is 0!" << std::endl;
+            return 0; 
+        }
+        else return lhs / rhs;
+    }
+};
+
 int main()
 {
     std::cout << "good to go!" << std::endl;
+    FloatType ft;
+    DoubleType dt;
+    IntType it;
+    auto floatResult = ft.add( 3.2f, 23.f );
+    auto doubleResult = dt.multiply( 5.14, 2.666 );
+    auto intResult = it.divide( 5, 0 );
+
+    std::cout    << "result of ft.add() is: " << floatResult
+                 << ", the result of dt.multiply() is: " << doubleResult 
+                 << ", and the result of it.divide() is: " << intResult 
+                 << "\n";
+
 }
