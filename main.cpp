@@ -58,15 +58,10 @@ struct FloatType
     }
     float divide( float lhs, float rhs )
     {
-        if( lhs == 0.0f )
+        if ( rhs == 0.0f )
         {
-            std::cout << "Warning: Divident is 0!" << std::endl;
-            return lhs / rhs;
-        }
-        else if ( rhs == 0.0f )
-        {
-            std::cout << "Warning: Divisor is 0! Operation Canceled. Default answers is 0!" << std::endl;
-            return 0.0f; 
+            std::cout << "Warning: Divisor is 0!" << std::endl;
+            return lhs / rhs;; 
         }
         else return lhs / rhs;
     }
@@ -88,15 +83,10 @@ struct DoubleType
     }
     double divide( double lhs, double rhs )
     {
-        if( lhs == 0.0 )
+        if ( rhs == 0.0 )
         {
-            std::cout << "Warning: Divident is 0!" << std::endl;
-            return lhs / rhs;
-        }
-        else if ( rhs == 0.0 )
-        {
-            std::cout << "Warning: Divisor is 0! Operation Canceled. Default answer is 0!" << std::endl;
-            return 0; 
+            std::cout << "Warning: Divisor is 0!" << std::endl;
+            return lhs / rhs;; 
         }
         else return lhs / rhs;
     }
@@ -119,12 +109,7 @@ struct IntType
     }
     int divide( int lhs, int rhs )
     {
-        if( lhs == 0 )
-        {
-            std::cout << "Warning: Divident is 0!" << std::endl;
-            return lhs / rhs;
-        }
-        else if ( rhs == 0 )
+        if ( rhs == 0 )
         {
             std::cout << "Warning: Divisor is 0! Operation Canceled. Default answer is 0!" << std::endl;
             return 0; 
@@ -139,12 +124,12 @@ int main()
     FloatType ft;
     DoubleType dt;
     IntType it;
-    auto floatResult = ft.add(3.2f, 23.f );
-    auto doubleResult = dt.divide(0, 5);
-    auto intResult = it.divide(5, 0);
+    auto floatResult = ft.add( 3.2f, 23.f );
+    auto doubleResult = dt.multiply( 5.14, 2.666 );
+    auto intResult = it.divide( 5, 0 );
 
     std::cout    << "result of ft.add() is: " << floatResult
-                 << ", the result of dt.divide() is: " << doubleResult 
+                 << ", the result of dt.multiply() is: " << doubleResult 
                  << ", and the result of it.divide() is: " << intResult 
                  << "\n";
 
